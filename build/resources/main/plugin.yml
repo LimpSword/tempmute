@@ -5,4 +5,6 @@ main: fr.limpsword.tempmute.TempmutePlugin
 api-version: 1.13
 commands:
   tempmute:
+    description: "Mute a player for an amount of time."
   unmute:
+    description: "Unmute a player"

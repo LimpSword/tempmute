@@ -6,22 +6,22 @@ public final class TimeParser {
 
     public static long getTime(String format) {
         if (format.endsWith("s")) {
-            long value = Integer.parseInt(format.split("s")[0]) * 1000;
+            long value = Integer.parseInt(format.split("s")[0]) * TimeUnit.SECONDS.toMillis(1);
             return value < 0 ? 0 : value;
         } else if (format.endsWith("m")) {
-            long value = Integer.parseInt(format.split("m")[0]) * 60000;
+            long value = Integer.parseInt(format.split("m")[0]) * TimeUnit.MINUTES.toMillis(1);
             return value < 0 ? 0 : value;
         } else if (format.endsWith("h")) {
-            long value = (long) (Integer.parseInt(format.split("h")[0]) * 3.6e6);
+            long value = Integer.parseInt(format.split("h")[0]) * TimeUnit.HOURS.toMillis(1);
             return value < 0 ? 0 : value;
         } else if (format.endsWith("d")) {
-            long value = (long) (Integer.parseInt(format.split("d")[0]) * 8.64e7);
+            long value = Integer.parseInt(format.split("d")[0]) * TimeUnit.DAYS.toMillis(1);
             return value < 0 ? 0 : value;
         } else if (format.endsWith("M")) {
-            long value = (long) (Integer.parseInt(format.split("M")[0]) * 2.628e+9);
+            long value = Integer.parseInt(format.split("M")[0]) * TimeUnit.DAYS.toMillis(31);
             return value < 0 ? 0 : value;
         } else if (format.endsWith("Y")) {
-            long value = (long) (Integer.parseInt(format.split("Y")[0]) * 3.154e+10);
+            long value = Integer.parseInt(format.split("Y")[0]) * TimeUnit.DAYS.toMillis(365);
             return value < 0 ? 0 : value;
         }
         return 0L;

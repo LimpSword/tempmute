@@ -1,0 +1,8 @@
+name: Tempmute
+version: 1.0
+author: LimpSword
+main: fr.limpsword.tempmute.TempmutePlugin
+api-version: 1.13
+commands:
+  tempmute:
+  unmute:
